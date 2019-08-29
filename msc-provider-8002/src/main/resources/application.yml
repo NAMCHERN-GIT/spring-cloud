@@ -1,0 +1,74 @@
+server:
+  port: 8002                                     # 服务端口号
+
+# mybatis配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**Mapper.xml
+  type-aliases-package: com.chennan.cloud.bo
+  global-config:
+    db-column-underline: true
+    refresh-mapper: true
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    id-type: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+spring:
+  application:
+    name: msc-provider                            # 应用名称
+  http:
+    encoding:                                     # 编码配置
+      force: true
+      charset: UTF-8
+      enabled: true
+  datasource:                                     # 数据源配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/cloudDB02?characterEncoding=UTF-8&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: chennan
+      password: 123456
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 1 from dual
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      # druid 连接池监控中心
+      filters: stat,wall
+      connection-properties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+      stat-view-servlet:
+        login-username: admin                     # 监控中心登录名称
+        login-password: 123456                    # 监控中心登录密码
+        url-pattern: /druid/*
+        enabled: true
+        reset-enable: false
+      web-stat-filter:
+        exclusions: '*.js,*.css,/druid/*'
+
+# 注册到注册中心Eureka
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${server.port}      # 实例别名
+    prefer-ip-address: true                                     # 访问路径可以显示ip地址
+  client:
+    service-url:
+      # defaultZone: http://msc-eureka-server:7001/eureka/
+      # defaultZone: http://local-eureka-server:7001/eureka/  # Eureka注册中心地址
+      # defaultZone: http://msc-eureka-server-1:7001/eureka/,http://msc-eureka-server-2:7002/eureka/,http://msc-eureka-server-3:7003/eureka/
+      defaultZone: http://local-eureka-server-1:7001/eureka/,http://local-eureka-server-2:7002/eureka/,http://local-eureka-server-3:7003/eureka/
+
+info:
+  app:
+    name: ${eureka.instance.instance-id}
+  company:
+    name: www.chennan.com
+

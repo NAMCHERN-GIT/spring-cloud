@@ -1,0 +1,23 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: msc-eureka
+
+eureka:
+  instance:
+    # hostname: msc-eureka-server-2
+    hostname: local-eureka-server-2
+  # 设置响应时间
+  server:
+    peer-node-read-timeout-ms: 3000
+  client:
+    register-with-eureka: false # false是不向注册中心注册自己
+    fetch-registry: false       # false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      # 单机配置
+      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 设置与Eureka Server交互的地址查询服务和地址注册服务都需要依赖这个地址
+      # 集群配置 (类似配置)
+      # defaultZone: http://msc-eureka-server-1:7001/eureka/,http://msc-eureka-server-3:7003/eureka/
+      defaultZone: http://local-eureka-server-1:7001/eureka/,http://local-eureka-server-3:7003/eureka/

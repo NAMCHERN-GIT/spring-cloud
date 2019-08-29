@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 定义母模块 -->
+    <groupId>com.chennan.cloud</groupId>
+    <artifactId>spring-cloud</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <description>spring-cloud大模块</description>
+
+    <!-- 子模块包含进来,构成一个多模块的项目 -->
+    <modules>
+        <!-- 引入公共模块 -->
+        <module>msc-common</module>
+        <!-- Eureka 注册中心模块 -->
+        <module>msc-eureka-7001</module>
+        <module>msc-eureka-7002</module>
+        <module>msc-eureka-7003</module>
+        <!-- 引入服务提供模块 -->
+        <module>msc-provider-8001</module>
+        <module>msc-provider-8002</module>
+        <module>msc-provider-8003</module>
+        <!-- 引入服务消费模块 -->
+        <module>msc-consumer-9001</module>
+
+
+    </modules>
+
+    <properties>
+        <!-- java版本设置 -->
+        <java.version>1.8</java.version>
+        <!-- maven编译时java版本 -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven-resources-plugin>3.1.0</maven-resources-plugin>
+        <!-- 项目源代码编码格式 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- 单元测试版本 -->
+        <junit.version>4.12</junit.version>
+
+        <!-- 工具 -->
+        <!-- lombok插件版本 -->
+        <lombok.version>1.18.8</lombok.version>
+        <!-- apache lang3 工具包版本 -->
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <!-- fastJson 版本 -->
+        <fastjson.version>1.2.59</fastjson.version>
+
+        <!-- 数据库 -->
+        <!-- mysql 数据库驱动包版本 -->
+        <mysql.version>8.0.17</mysql.version>
+
+        <!-- 连接池 -->
+        <!-- 阿里druid连接池版本 -->
+        <druid-spring-boot.version>1.1.18</druid-spring-boot.version>
+
+        <!-- 持久层 -->
+        <!-- mybatisPlus版本 -->
+        <mybatis-plus.version>2.1.8</mybatis-plus.version>
+        <!-- mybatis-spring-boot 版本 -->
+        <mybatis-spring-boot.version>2.0.0</mybatis-spring-boot.version>
+        <!-- mybatisPlus-spring-boot 版本 -->
+        <mybatisplus-spring-boot.version>1.0.5</mybatisplus-spring-boot.version>
+
+        <!-- spring-boot 版本号 -->
+        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+
+        <!-- spring-cloud 版本号 -->
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+    </properties>
+
+    <!-- 供继承者使用，按需引入依赖 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 单元测试依赖包引入 -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <!-- lombok 依赖包引入 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!-- apache lang3 工具包引入 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!-- fastJson依赖 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- mysql驱动依赖 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- 阿里druid连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot.version}</version>
+            </dependency>
+            <!-- mybatis-plus依赖 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- mybatis-spring-boot依赖 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+            <!-- mybatisPlus-spring-boot -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatisplus-spring-boot-starter</artifactId>
+                <version>${mybatisplus-spring-boot.version}</version>
+            </dependency>
+            <!-- spring-boot 依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring-cloud 依赖 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!-- spring-boot 插件,需要打包执行主类信息 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- maven打包编译时，是否跳过单元测试  skipTests=true 跳过 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.20.1</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
