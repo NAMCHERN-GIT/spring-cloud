@@ -13,12 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * fastJson比spring-boot默认带的Jackson快，因此使用fastJson代替Jackson处理的消息转化器
+ * fastJson比spring-boot默认带的Jackson快，因此使用fastJson代替Jackson处理的消息转化器。
  * @author chen.nan
  */
 @Configuration
 public class HttpConverterConfig {
 
+    /**
+     * springMVC 消息转换器配置，使用fastJson替换Jackson。
+     * @return HttpMessageConverters
+     */
     @Bean
     public HttpMessageConverters fastJsonHttpMessageConverters() {
         FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();

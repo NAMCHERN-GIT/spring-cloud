@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 消费端web层
+ * 消费端web层。
  * @author chen.nan
  */
 @RequestMapping("/dept")

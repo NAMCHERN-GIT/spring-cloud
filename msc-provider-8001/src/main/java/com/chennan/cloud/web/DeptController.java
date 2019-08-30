@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 控制层实现
+ * @author chen.nan
+ */
 @RequestMapping("/dept")
 @RestController
 public class DeptController {

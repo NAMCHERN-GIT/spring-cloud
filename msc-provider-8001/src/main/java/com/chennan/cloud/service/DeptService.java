@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 业务层实现类
+ * @author chen.nan
+ */
 @Service
 public class DeptService {
 

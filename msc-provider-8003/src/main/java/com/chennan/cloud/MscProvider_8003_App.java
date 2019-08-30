@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
+/**
+ * 服务提供者 Spring-boot 入口启动类
+ * @author chen.nan
+ */
 @SpringBootApplication
 @EnableEurekaClient    // 开启eureka客户端注册
 @EnableDiscoveryClient // 开启服务发现
