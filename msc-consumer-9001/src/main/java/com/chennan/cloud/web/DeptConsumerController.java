@@ -20,7 +20,6 @@ import java.util.Map;
 @RestController
 public class DeptConsumerController {
 
-    // private static final String REST_URL_PREFIX = "http://localhost:9100";
     /**
      * 使用微服务名称进行微服务调用，不用再关心地址和端口
      */
