@@ -26,6 +26,9 @@
         <!-- 引入服务消费模块 -->
         <module>msc-consumer-9001</module>
 
+        <!-- 集成feign -->
+        <module>msc-consumer-feign</module>
+
 
     </modules>
 

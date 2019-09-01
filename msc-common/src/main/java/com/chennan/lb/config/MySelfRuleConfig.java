@@ -16,7 +16,7 @@ public class MySelfRuleConfig {
      * 使用自定义轮询策略（每个微服务提供者轮询5次才切换下一个微服务）
      * @return IRule
      */
-    @Bean
+    @Bean("mySelfRule")
     public IRule getRule(){
         return new MySelfRule();
     }

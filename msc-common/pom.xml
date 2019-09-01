@@ -93,6 +93,12 @@
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
 
+        <!-- 集成OpenFeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
         <!-- actuator 监控和信息配置 依赖引入 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
