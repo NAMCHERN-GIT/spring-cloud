@@ -1,10 +1,10 @@
 package com.chennan.cloud;
 
-import com.chennan.lb.config.MySelfRuleConfig;
+//import com.chennan.lb.config.MySelfRuleConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
+//import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 /**
  * SpringBoot项目启动入口程序类。
@@ -14,7 +14,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@RibbonClient(name = "msc-provider", configuration = MySelfRuleConfig.class)
+// @RibbonClient(name = "msc-provider", configuration = MySelfRuleConfig.class)
 public class MscConsumer_9001_App {
 
     public static void main(String[] args) {

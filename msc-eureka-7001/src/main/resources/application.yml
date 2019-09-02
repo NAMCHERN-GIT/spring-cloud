@@ -9,6 +9,7 @@ eureka:
   instance:
     # hostname: msc-eureka-server-1
     hostname: local-eureka-server-1
+    # hostname: local-eureka-server
   # 设置响应时间
   server:
     peer-node-read-timeout-ms: 3000

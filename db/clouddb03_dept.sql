@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: clouddb01
+-- Host: 127.0.0.1    Database: clouddb03
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -39,7 +39,7 @@ CREATE TABLE `dept` (
 
 LOCK TABLES `dept` WRITE;
 /*!40000 ALTER TABLE `dept` DISABLE KEYS */;
-INSERT INTO `dept` VALUES (1,'解决方案一部','clouddb01'),(2,'解决方案二部','clouddb01'),(3,'研发部','clouddb01'),(4,'交付一部','clouddb01'),(5,'交付二部','clouddb01'),(6,'交付三部','clouddb01'),(7,'交付四部','clouddb01');
+INSERT INTO `dept` VALUES (1,'解决方案一部','clouddb03'),(2,'解决方案二部','clouddb03'),(3,'研发部','clouddb03'),(4,'交付一部','clouddb03'),(5,'交付二部','clouddb03'),(6,'交付三部','clouddb03'),(7,'交付四部','clouddb03');
 /*!40000 ALTER TABLE `dept` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

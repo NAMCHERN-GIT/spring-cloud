@@ -6,13 +6,13 @@
 
     <!-- 继承母模块 -->
     <parent>
-        <groupId>com.chennan.cloud</groupId>
         <artifactId>spring-cloud</artifactId>
+        <groupId>com.chennan.cloud</groupId>
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>msc-provider-8001</artifactId>
-    <description>服务提供方</description>
+    <artifactId>msc-provider-hystrix-8001</artifactId>
+    <description>使用hystrix的服务提供方</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -54,4 +54,6 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
     </dependencies>
+
+
 </project>

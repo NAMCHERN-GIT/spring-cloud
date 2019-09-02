@@ -23,11 +23,17 @@
         <module>msc-provider-8001</module>
         <module>msc-provider-8002</module>
         <module>msc-provider-8003</module>
+
         <!-- 引入服务消费模块 -->
         <module>msc-consumer-9001</module>
 
         <!-- 集成feign -->
         <module>msc-consumer-feign</module>
+
+        <!-- 服务提供模块断路器添加 -->
+        <module>msc-provider-hystrix-8001</module>
+        <module>msc-provider-hystrix-8002</module>
+        <module>msc-provider-hystrix-8003</module>
 
 
     </modules>

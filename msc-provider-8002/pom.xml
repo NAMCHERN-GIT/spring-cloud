@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>msc-provider-8002</artifactId>
-    <version>1.0.0</version>
     <description>服务提供方</description>
 
     <properties>

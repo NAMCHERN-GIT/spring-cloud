@@ -22,50 +22,38 @@ import java.util.Map;
 public class DeptFeignConsumerController {
 
     /**
-     * 使用微服务名称进行微服务调用，不用再关心地址和端口
+     * 使用Feign，接口+注解的方式，简化client的开发
      */
-    private static final String REST_URL_PREFIX = "http://msc-provider";
-
-    /**
-     * 使用 RestTemplate访问restful接口非常的简单粗暴无脑。（url，requestMap，ResponseBean.class），
-     * 这三个参数分别代表REST请求地址，请求参数，HTTP响应转换被转换成的对象类型。
-     */
-    @Autowired private RestTemplate restTemplate;
-
     @Autowired private DeptClientService clientService;
 
     @PostMapping("/add")
     public Integer add(Dept dept){
-        return restTemplate.postForObject(REST_URL_PREFIX + "/dept/add", dept, Integer.class);
+        return clientService.add(dept);
     }
 
     @GetMapping("/get")
     public Dept get(Long deptNo){
-        Map<String,Object> parms = new LinkedHashMap<>();
-        parms.put("deptNo", deptNo);
-        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/get?deptNo={deptNo}", Dept.class, parms);
+        return clientService.get(deptNo);
     }
 
     @GetMapping("/list")
     public List list(){
-        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/list" , List.class);
+        return clientService.list();
     }
 
     @PostMapping("/edit")
     public Integer edit(Dept dept){
-        return restTemplate.postForObject(REST_URL_PREFIX + "/dept/edit" , dept, Integer.class);
+        return clientService.edit(dept);
     }
 
     @PostMapping("/delete")
     public Integer delete(Long deptNo){
-        Map<String,Object> parms = new LinkedHashMap<>();
-        parms.put("deptNo", deptNo);
-        return restTemplate.postForObject(REST_URL_PREFIX + "/dept/delete", parms, Integer.class);
+        return clientService.delete(deptNo);
     }
 
     @GetMapping("/discovery")
     public String discovery(){
-        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/getDiscovery", String.class);
+        return clientService.discovery();
     }
 
 }

@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>msc-eureka-7002</artifactId>
-    <version>1.0.0</version>
     <description>Eureka注册中心模块</description>
 
     <properties>

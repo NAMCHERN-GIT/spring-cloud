@@ -26,6 +26,7 @@ public class LoadBalancedRuleConfig {
      */
     @Bean("sysRule")
     public IRule getRule(){
+        System.out.println("sysRule");
         return new RandomRule();
     }
 

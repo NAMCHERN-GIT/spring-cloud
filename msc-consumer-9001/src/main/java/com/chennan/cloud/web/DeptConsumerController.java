@@ -38,9 +38,9 @@ public class DeptConsumerController {
 
     @GetMapping("/get")
     public Dept get(Long deptNo){
-        Map<String,Object> parms = new LinkedHashMap<>();
-        parms.put("deptNo", deptNo);
-        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/get?deptNo={deptNo}", Dept.class, parms);
+        Map<String,Object> paramMap = new LinkedHashMap<>();
+        paramMap.put("deptNo", deptNo);
+        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/get?deptNo={deptNo}", Dept.class, paramMap);
     }
 
     @GetMapping("/list")
@@ -55,9 +55,9 @@ public class DeptConsumerController {
 
     @PostMapping("/delete")
     public Integer delete(Long deptNo){
-        Map<String,Object> parms = new LinkedHashMap<>();
-        parms.put("deptNo", deptNo);
-        return restTemplate.postForObject(REST_URL_PREFIX + "/dept/delete", parms, Integer.class);
+        Map<String,Object> paramMap = new LinkedHashMap<>();
+        paramMap.put("deptNo", deptNo);
+        return restTemplate.postForObject(REST_URL_PREFIX + "/dept/delete", paramMap, Integer.class);
     }
 
     @GetMapping("/discovery")

@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>msc-eureka-7003</artifactId>
-    <description>Eureka注册中心模块</description>
+    <artifactId>msc-provider-hystrix-8002</artifactId>
+    <description>服务提供方</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -20,24 +20,11 @@
     </properties>
 
     <dependencies>
-        <!-- eureka服务端 -->
+        <!-- 完全继承 msc-provider-hystrix-8001 -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <!-- 排除tomcat -->
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- 加入jetty依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jetty</artifactId>
+            <groupId>com.chennan.cloud</groupId>
+            <artifactId>msc-provider-hystrix-8001</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
-
-
 </project>

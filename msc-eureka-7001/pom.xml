@@ -12,7 +12,6 @@
     </parent>
 
     <artifactId>msc-eureka-7001</artifactId>
-    <version>1.0.0</version>
     <description>Eureka注册中心模块</description>
 
     <properties>
