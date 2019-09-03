@@ -2,7 +2,7 @@ package com.chennan.cloud.web;
 
 import com.chennan.cloud.bo.Dept;
 import com.chennan.cloud.service.DeptService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+//import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -34,9 +34,16 @@ public class DeptController {
         return deptService.add(dept);
     }
 
+    /**
+     * {@link @HystrixCommand(fallbackMethod = "processHandlerGet")}
+     * 一旦调用服务方法失败并抛出了错误的信息后，会自动调用 @HystrixCommand 标注好的 fallbackMethod 调用类中的指定方法。
+     *
+     * 缺点：每一个方法都遭这里面单独定义一个fallback方法，太繁琐，增加了系统的耦合度
+     * @param deptNo 部门编号
+     * @return  Dept
+     */
     @GetMapping("/get")
-    // 一旦调用服务方法失败并抛出了错误的信息后，会自动调用 @HystrixCommand 标注好的 fallbackMethod 调用类中的指定方法。
-    @HystrixCommand(fallbackMethod = "processHandlerGet")
+    //@HystrixCommand(fallbackMethod = "processHandlerGet")
     public Dept get(Long deptNo) {
         Dept dept = deptService.get(deptNo);
         if (dept == null)
@@ -44,12 +51,12 @@ public class DeptController {
         return dept;
     }
 
-    public Dept processHandlerGet(Long deptNo){
+    /*public Dept processHandlerGet(Long deptNo){
         return new Dept()
                 .setDeptNo(deptNo)
                 .setDeptName("deptNo equal " + deptNo + " is not null")
                 .setDbSource("no db_source in mysql");
-    }
+    }*/
 
     @GetMapping("/list")
     public List<Dept> list() {
