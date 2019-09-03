@@ -6,6 +6,7 @@ import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 
 /**
+ * 实现服务熔断，服务降级
  * 千万不要忘记添加注解 {@link @Component}
  * @author chen.nan
  */
