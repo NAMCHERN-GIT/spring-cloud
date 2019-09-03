@@ -7,6 +7,8 @@ spring:
       force: true
       charset: UTF-8
       enabled: true
+  application:
+    name: msc-consumer-feign
 
 eureka:
   client:
@@ -16,3 +18,8 @@ eureka:
       # defaultZone: http://local-eureka-server:7001/eureka/
       # defaultZone: http://msc-eureka-server-1:7001/eureka/,http://msc-eureka-server-2:7002/eureka/,http://msc-eureka-server-3:7003/eureka/
       defaultZone: http://local-eureka-server-1:7001/eureka/,http://local-eureka-server-2:7002/eureka/,http://local-eureka-server-3:7003/eureka/
+
+# 加入Feign的配置项
+feign:
+  httpclient:
+    enabled: true
