@@ -1,0 +1,13 @@
+server:
+  port: 10000
+
+management:
+  endpoint:
+    hystrix:
+      stream:
+        enabled: true
+
+# 访问地址
+access:
+  url: http://127.0.0.1:${server.port}/hystrix
+

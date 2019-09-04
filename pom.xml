@@ -34,6 +34,7 @@
         <module>msc-provider-hystrix-8001</module>
         <module>msc-provider-hystrix-8002</module>
         <module>msc-provider-hystrix-8003</module>
+        <module>msc-hystrix-dashboard</module>
 
 
     </modules>

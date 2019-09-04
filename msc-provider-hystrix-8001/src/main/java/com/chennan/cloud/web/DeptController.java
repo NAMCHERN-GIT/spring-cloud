@@ -22,6 +22,9 @@ import java.util.stream.Collectors;
 @RestController
 public class DeptController {
 
+    /**
+     * 部门service
+     */
     @Autowired private DeptService deptService;
 
     /**
@@ -29,6 +32,11 @@ public class DeptController {
      */
     @Autowired private DiscoveryClient client;
 
+    /**
+     * 新增部门信息
+     * @param dept 部门信息
+     * @return 1-成功  0-失败
+     */
     @PostMapping("/add")
     public int add(Dept dept) {
         return deptService.add(dept);
@@ -46,8 +54,7 @@ public class DeptController {
     //@HystrixCommand(fallbackMethod = "processHandlerGet")
     public Dept get(Long deptNo) {
         Dept dept = deptService.get(deptNo);
-        if (dept == null)
-            throw new RuntimeException("deptNo equal " + deptNo + " is not null");
+        if (dept == null) throw new RuntimeException("deptNo equal " + deptNo + " is not null");
         return dept;
     }
 
@@ -58,21 +65,39 @@ public class DeptController {
                 .setDbSource("no db_source in mysql");
     }*/
 
+    /**
+     * 查询所有的部门列表
+     * @return 所有的部门列表
+     */
     @GetMapping("/list")
     public List<Dept> list() {
         return deptService.list();
     }
 
+    /**
+     * 修改部门
+     * @param dept 部门信息
+     * @return 1-成功  0-失败
+     */
     @PostMapping("/edit")
     public int edit(Dept dept) {
         return deptService.edit(dept);
     }
 
+    /**
+     * 删除部门
+     * @param deptNo 部门编号
+     * @return 1-成功  0-失败
+     */
     @PostMapping("/delete")
     public int delete(Long deptNo) {
         return deptService.delete(deptNo);
     }
 
+    /**
+     * 获取服务提供者信息
+     * @return String 服务提供者信息
+     */
     @GetMapping("/getDiscovery")
     public String getDiscovery(){
         List<String> services = client.getServices();
