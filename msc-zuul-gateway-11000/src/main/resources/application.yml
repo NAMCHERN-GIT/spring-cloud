@@ -1,0 +1,20 @@
+server:
+  port: 11000
+
+spring:
+  application:
+    name: msc-zuul-gateway
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://local-eureka-server-1:7001/eureka/,http://local-eureka-server-2:7002/eureka/,http://local-eureka-server-3:7003/eureka/
+
+info:
+  app:
+    name: ${eureka.instance.instance-id}
+  company:
+    name: www.chennan.com
