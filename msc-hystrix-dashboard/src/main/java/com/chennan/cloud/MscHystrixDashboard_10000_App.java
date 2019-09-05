@@ -2,6 +2,7 @@ package com.chennan.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
 /**
@@ -9,10 +10,12 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
  * 访问地址：http://xx.xx.xx.xx:10000/hystrix
  *
  * SpringBoot项目启动入口程序类。
- * {@link @EnableHystrixDashboard} 开启 Hystrix Dashboard
+ * {@link @EnableHystrixDashboard} 启用 HystrixDashboard 断路器看板 相关配置
+ * {@link @EnableDiscoveryClient} 启用 Eureka 服务发现 相关配置
  */
 @SpringBootApplication
 @EnableHystrixDashboard
+@EnableDiscoveryClient
 public class MscHystrixDashboard_10000_App {
     public static void main(String[] args) {
         SpringApplication.run(MscHystrixDashboard_10000_App.class, args);
