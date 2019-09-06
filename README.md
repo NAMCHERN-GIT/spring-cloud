@@ -14,7 +14,7 @@ spring-cloud学习
 修改所在主机的hosts文件，追加config目录下hosts文件中的内容到所在主机的hosts文件。
 ```
 
-### 踩坑
+### 踩坑1
 ```java
 @FeignClient(name = "msc-provider")
 public interface DeptClientService {                                    
@@ -26,4 +26,18 @@ public interface DeptClientService {
     @GetMapping(value = "/dept/get")
     Dept get(@RequestParam(value = "deptNo") Long deptNo);
 }
+```
+
+### 踩坑2
+zuul服务网关代理配置的坑
+```yaml
+# 服务网关代理
+zuul:
+  # 踩坑：prefix配置项前必须有'/',否则GG
+  # 访问地址：http://127.0.0.1:11000/chennan/myProvider/dept/get?deptNo=1
+  prefix: /chennan
+  ignored-services: "*"
+  routes:
+    myProvider.serviceId: msc-provider
+    myProvider.path: /myProvider/**
 ```
