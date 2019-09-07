@@ -1,0 +1,13 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: msc-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/NAMCHERN-GIT/spring-cloud-config.git
+          username: NAMCHERN_GIT
+          password: namchern@aliyun.com

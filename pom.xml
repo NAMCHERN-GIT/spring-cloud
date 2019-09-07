@@ -36,6 +36,7 @@
         <module>msc-provider-hystrix-8003</module>
         <module>msc-hystrix-dashboard</module>
         <module>msc-zuul-gateway-11000</module>
+        <module>msc-config-3344</module>
 
 
     </modules>
