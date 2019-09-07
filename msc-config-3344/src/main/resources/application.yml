@@ -9,5 +9,5 @@ spring:
       server:
         git:
           uri: https://github.com/NAMCHERN-GIT/spring-cloud-config.git
-          username: NAMCHERN_GIT
-          password: namchern@aliyun.com
+          # username: NAMCHERN-GIT
+          # password: xxxx
