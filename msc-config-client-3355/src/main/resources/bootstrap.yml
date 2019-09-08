@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: msc-config-client                   # 微服务名称
+  cloud:
+    config:
+      name: msc-config-client                 # 需要从github上读取的资源名称，注意没有yml后缀名
+      profile: dev                            # 本次访问的配置项
+      label: master                           # 分支
+      uri: http://local-config-3344:3344      # 本微服务启动后先去找3344号服务，通过SpringCloudConfig获取github的服务地址
+
+# 在SpringCloud 2.0.0 以后，需要在bootstrap.yml中配置此项，才能手动刷新config-server上的配置，访问方式 post /actuator/refresh
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health
