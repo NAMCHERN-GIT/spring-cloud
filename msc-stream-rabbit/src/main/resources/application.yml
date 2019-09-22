@@ -1,0 +1,20 @@
+server:
+  port: 9898
+
+spring:
+  application:
+    name: msc-stream-rabbit
+  rabbitmq:
+    host: 192.168.10.151
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        # 通过 spring.cloud.stream.bindings.*.destination 的配置，让输入通道和输出通道对应到同一个主题上
+        myInput:
+          # 指定输入通道对应的主题名
+          destination: minestream
+        myOutput:
+          destination: minestream
