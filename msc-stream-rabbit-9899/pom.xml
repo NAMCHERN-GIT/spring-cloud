@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>msc-stream-rabbit</artifactId>
+    <artifactId>msc-stream-rabbit-9899</artifactId>
     <description>spring cloud stream</description>
 
     <properties>
@@ -20,16 +20,10 @@
     </properties>
 
     <dependencies>
-        <!-- 引入公共模块 -->
         <dependency>
             <groupId>com.chennan.cloud</groupId>
-            <artifactId>msc-common</artifactId>
+            <artifactId>msc-stream-rabbit-9898</artifactId>
             <version>1.0.0</version>
-        </dependency>
-        <!-- 引入 spring cloud RabbitMQ依赖 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
         </dependency>
     </dependencies>
 

@@ -96,3 +96,19 @@ curl -XPOST http://127.0.0.1:3355/actuator/refresh
 ```text
 ["config.client.version","spring.application.name"]
 ```
+
+### 踩坑4  spring-cloud-stream rabbit 避免重读消费
+```yaml
+spring:
+    cloud:
+        stream:
+          bindings:
+            # 通过 spring.cloud.stream.bindings.*.destination 的配置，让输入通道和输出通道对应到同一个主题上
+            myInput:
+              # 指定输入通道对应的主题名
+              destination: minestream
+              # 指定该应用实例属于 stream 消费组，为了避免重复消费的问题，加入了消费组
+              group: stream
+            myOutput:
+              destination: minestream
+```

@@ -38,7 +38,8 @@
         <module>msc-zuul-gateway-11000</module>
         <module>msc-config-server-3344</module>
         <module>msc-config-client-3355</module>
-        <module>msc-stream-rabbit</module>
+        <module>msc-stream-rabbit-9898</module>
+        <module>msc-stream-rabbit-9899</module>
 
 
     </modules>
