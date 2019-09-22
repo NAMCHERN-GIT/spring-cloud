@@ -97,7 +97,7 @@ curl http://www.baidu.com
 ```dockerfile
 FROM centos
 RUN yum install -y curl
-CMD ["curl","-s","https://www.ip.cn"
+CMD ["curl","-s","https://www.ip.cn"]
 ```
 
 ### 生成docker images
