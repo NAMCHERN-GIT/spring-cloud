@@ -34,14 +34,20 @@
         <module>msc-provider-hystrix-8001</module>
         <module>msc-provider-hystrix-8002</module>
         <module>msc-provider-hystrix-8003</module>
+
+        <!-- 豪猪版 dashboard -->
         <module>msc-hystrix-dashboard</module>
+
+        <!-- spring cloud 路由网关模块 -->
         <module>msc-zuul-gateway-11000</module>
+
+        <!-- spring cloud config center -->
         <module>msc-config-server-3344</module>
         <module>msc-config-client-3355</module>
+
+        <!-- spring cloud stream -->
         <module>msc-stream-rabbit-9898</module>
         <module>msc-stream-rabbit-9899</module>
-
-
     </modules>
 
     <properties>
