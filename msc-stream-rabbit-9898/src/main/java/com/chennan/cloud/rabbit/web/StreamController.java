@@ -13,9 +13,13 @@ public class StreamController {
 
     @Autowired private StreamClient streamClient;
 
+    /**
+     * 生产者生产消息到 rabbitMQ 中
+     * @param msg 消息内容
+     */
     @GetMapping("send")
-    public void send(){
-        streamClient.output().send(MessageBuilder.withPayload("Hello World...").build());
+    public void send(String msg){
+        streamClient.output().send(MessageBuilder.withPayload(msg).build());
     }
 
 }
