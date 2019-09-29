@@ -11,3 +11,25 @@ spring:
           uri: https://github.com/NAMCHERN-GIT/spring-cloud-config.git
           # username: NAMCHERN-GIT
           # password: xxxx
+      label: master
+  rabbitmq:
+    host: 192.168.232.151
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      # defaultZone: http://msc-eureka-server:7001/eureka/      # Eureka注册中心地址
+      # defaultZone: http://local-eureka-server:7001/eureka/
+      # defaultZone: http://msc-eureka-server-1:7001/eureka/,http://msc-eureka-server-2:7002/eureka/,http://msc-eureka-server-3:7003/eureka/
+      defaultZone: http://local-eureka-server-1:7001/eureka/,http://local-eureka-server-2:7002/eureka/,http://local-eureka-server-3:7003/eureka/
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
