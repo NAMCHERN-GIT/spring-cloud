@@ -24,15 +24,24 @@ public class ConfigClientController {
     @Value("${eureka.client.service-url.defaultZone}")
     private String eurekaServers;
 
-    @Value("${server.port}")
-    private String port;
+    //@Value("${server.port}")
+    //private String port;
+
+    @Value("${msc-name}")
+    private String mscName;
 
     @GetMapping("/getConfig")
     public String getConfig(){
         String result = "application: " + applicationName
-                + "\t " + "eurekaServers: " + eurekaServers
-                + "\t " + "port: " + port;
+                + "\t " + "eurekaServers: " + eurekaServers;
+                //+ "\t " + "port: " + port;
         log.info(result);
         return result;
+    }
+
+    @GetMapping("/getMscName")
+    public String getMscName(){
+        log.info(mscName);
+        return mscName;
     }
 }

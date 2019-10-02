@@ -112,3 +112,7 @@ spring:
             myOutput:
               destination: minestream
 ```
+### 踩坑4:spring-cloud-bus 消息总线通知刷新接口
+```text
+POST /actuator/bus-refresh
+```
