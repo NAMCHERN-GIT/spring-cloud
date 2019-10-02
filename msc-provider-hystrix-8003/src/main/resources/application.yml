@@ -53,6 +53,12 @@ spring:
         reset-enable: false
       web-stat-filter:
         exclusions: '*.js,*.css,/druid/*'
+  ## zipkin 链路追踪，客户端配置
+  zipkin:
+    base-url: http://localhost:9999
+  sleuth:
+    sampler:
+      probability: 1.0
 
 # 注册到注册中心Eureka
 eureka:

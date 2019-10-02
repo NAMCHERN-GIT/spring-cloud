@@ -48,6 +48,9 @@
         <!-- spring cloud stream -->
         <module>msc-stream-rabbit-9898</module>
         <module>msc-stream-rabbit-9899</module>
+
+        <!-- zipkin server 模块 （微服务链路追踪）-->
+        <module>zipkin-server-9999</module>
     </modules>
 
     <properties>
