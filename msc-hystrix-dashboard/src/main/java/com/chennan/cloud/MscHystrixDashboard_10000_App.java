@@ -16,6 +16,8 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
  * SpringBoot项目启动入口程序类。
  * {@link @EnableHystrixDashboard} 启用 HystrixDashboard 断路器看板 相关配置
  * {@link @EnableDiscoveryClient} 启用 Eureka 服务发现 相关配置
+ *
+ * @author chen.nan
  */
 @SpringBootApplication
 @EnableHystrixDashboard

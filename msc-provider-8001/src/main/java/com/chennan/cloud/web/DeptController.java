@@ -1,6 +1,5 @@
 package com.chennan.cloud.web;
 
-
 import com.chennan.cloud.bo.Dept;
 import com.chennan.cloud.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;

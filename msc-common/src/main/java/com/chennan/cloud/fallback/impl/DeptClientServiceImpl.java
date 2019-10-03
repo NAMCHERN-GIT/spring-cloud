@@ -2,6 +2,8 @@ package com.chennan.cloud.fallback.impl;
 
 import com.chennan.cloud.bo.Dept;
 import com.chennan.cloud.service.DeptClientService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,5 +53,17 @@ public class DeptClientServiceImpl implements DeptClientService {
     @Override
     public String discovery() {
         return errMsg;
+    }
+
+    private final static int FAIL_UPLOAD_RESULT = 0;
+
+    @Override
+    public int upload(MultipartFile file) {
+        return FAIL_UPLOAD_RESULT;
+    }
+
+    @Override
+    public ResponseEntity<byte[]> download() {
+        return null;
     }
 }

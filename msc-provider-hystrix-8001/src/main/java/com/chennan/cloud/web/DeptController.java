@@ -6,11 +6,12 @@ import com.chennan.cloud.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -92,6 +93,21 @@ public class DeptController {
     @PostMapping("/delete")
     public int delete(Long deptNo) {
         return deptService.delete(deptNo);
+    }
+
+    /**
+     * 文件上传
+     * @param file 文件
+     * @return 0-上传失败 1-上传成功
+     */
+    @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public int upload(@RequestPart(value = "file") MultipartFile file){
+        return deptService.upload(file);
+    }
+
+    @GetMapping("/download")
+    public ResponseEntity<byte[]> download(HttpServletRequest request){
+        return deptService.download(request);
     }
 
     /**
