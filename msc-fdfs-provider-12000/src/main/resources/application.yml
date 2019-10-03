@@ -1,0 +1,11 @@
+server:
+  port: 12000
+fdfs:
+  so-timeout: 1500
+  connect-timeout: 600
+  tracker-list:
+    - 192.168.232.151:22122
+  pool:
+    max-total: 200
+    max-total-per-key: 50
+    max-wait-millis: 5000

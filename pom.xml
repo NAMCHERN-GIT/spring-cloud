@@ -51,6 +51,9 @@
 
         <!-- zipkin server 模块 （微服务链路追踪）-->
         <module>zipkin-server-9999</module>
+
+        <!-- 文件服务器FastDFS整合 -->
+        <module>msc-fdfs-provider-12000</module>
     </modules>
 
     <properties>
