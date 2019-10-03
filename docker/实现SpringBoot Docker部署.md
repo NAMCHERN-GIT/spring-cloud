@@ -26,10 +26,10 @@ firewall-cmd --zone=public --add-port=2375/tcp --permanent
   <artifactId>docker-maven-plugin</artifactId>  
   <version>1.2.0</version>  
   <executions> 
-    <!-- 指定在deploy阶段执行 build-image 任务 -->
+    <!-- 指定在install阶段执行 build-image 任务 -->
     <execution> 
       <id>build-image</id>  
-      <phase>deploy</phase>  
+      <phase>install</phase>  
       <goals> 
         <goal>build</goal> 
       </goals> 
@@ -80,10 +80,10 @@ ENTRYPOINT ["java","-jar","/app.jar"]
   <artifactId>docker-maven-plugin</artifactId>  
   <version>1.2.0</version>  
   <executions> 
-    <!-- 指定在deploy阶段执行 build-image 任务 -->  
+    <!-- 指定在install阶段执行 build-image 任务 -->  
     <execution> 
       <id>build-image</id>  
-      <phase>deploy</phase>  
+      <phase>install</phase>  
       <goals> 
         <goal>build</goal> 
       </goals> 
@@ -125,6 +125,6 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 执行mvn命令
 ```shell script
 mvn clean
-mvn deploy
+mvn install
 ```
 ![avatar](img/hello_images.png)
