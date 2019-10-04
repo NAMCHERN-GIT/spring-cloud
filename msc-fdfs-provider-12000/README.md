@@ -8,7 +8,7 @@
         <version>1.26.7</version>
     </dependency>
 ```
-### 2.yaml中核心属性配置
+### 2.yaml中核心属性配置,参考配置文件[application.yml](./src/main/resources/application.yml)
 ```yaml
 fdfs:
   so-timeout: 1500
@@ -22,7 +22,7 @@ fdfs:
     max-wait-millis: 5000
 ```
 ### 3.实现上传下载核心实现类
-FastDfsConfig 配置类
+[FastDfsConfig](./src/main/java/com/chennan/cloud/config/FastDfsConfig.java) 配置类
 ```java
 package com.chennan.cloud.config;
 
@@ -42,7 +42,7 @@ import org.springframework.jmx.support.RegistrationPolicy;
 public class FastDfsConfig {}
 
 ```
-FastDfsClient 实现类
+[FastDfsClient](./src/main/java/com/chennan/cloud/client/FastDfsClient.java) 实现类
 ```java
 package com.chennan.cloud.client;
 
