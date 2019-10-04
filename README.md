@@ -116,3 +116,7 @@ spring:
 ```text
 POST /actuator/bus-refresh
 ```
+
+### TX-LCN 分布式事务解决
+
+### 认证与授权
