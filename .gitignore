@@ -1,6 +1,7 @@
 /target/*
 /*/target/*
 /.idea/*
+/.txlcn/*
 *.iws
 *.iml
 *.ipr

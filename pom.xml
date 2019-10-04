@@ -89,12 +89,11 @@
         <druid-spring-boot.version>1.1.18</druid-spring-boot.version>
 
         <!-- 持久层 -->
-        <!-- mybatisPlus版本 -->
-        <mybatis-plus.version>2.1.8</mybatis-plus.version>
-        <!-- mybatis-spring-boot 版本 -->
-        <mybatis-spring-boot.version>2.0.0</mybatis-spring-boot.version>
-        <!-- mybatisPlus-spring-boot 版本 -->
-        <mybatisplus-spring-boot.version>1.0.5</mybatisplus-spring-boot.version>
+        <mybatis-plus-boot.version>3.2.0</mybatis-plus-boot.version>
+        <p6spy.version>3.8.6</p6spy.version>
+
+        <!-- lcn -->
+        <txlcn.version>5.0.2.RELEASE</txlcn.version>
 
         <!-- spring-boot 版本号 -->
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
@@ -142,23 +141,35 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-spring-boot.version}</version>
             </dependency>
-            <!-- mybatis-plus依赖 -->
+            <!-- mybatis-plus-boot 依赖 -->
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus</artifactId>
-                <version>${mybatis-plus.version}</version>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot.version}</version>
             </dependency>
-            <!-- mybatis-spring-boot依赖 -->
+            <!-- p6spy -->
             <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis-spring-boot.version}</version>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
             </dependency>
-            <!-- mybatisPlus-spring-boot -->
+            <!-- tm -->
             <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatisplus-spring-boot-starter</artifactId>
-                <version>${mybatisplus-spring-boot.version}</version>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-tm</artifactId>
+                <version>${txlcn.version}</version>
+            </dependency>
+            <!--tc-->
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-tc</artifactId>
+                <version>${txlcn.version}</version>
+            </dependency>
+            <!--tc与tm通讯-->
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-txmsg-netty</artifactId>
+                <version>${txlcn.version}</version>
             </dependency>
             <!-- spring-boot 依赖 -->
             <dependency>

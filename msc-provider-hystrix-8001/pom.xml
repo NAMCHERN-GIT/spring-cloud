@@ -38,16 +38,6 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
-        <!-- 引入mybatis-spring-boot依赖 -->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>
-        <!-- 引入mybatisPlus-spring-boot 依赖  -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatisplus-spring-boot-starter</artifactId>
-        </dependency>
         <!-- 引入spring-boot-jdbc 依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

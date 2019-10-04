@@ -6,11 +6,10 @@ mybatis-plus:
   mapper-locations: classpath:/mapper/**Mapper.xml
   type-aliases-package: com.chennan.cloud.bo
   global-config:
-    db-column-underline: true
-    refresh-mapper: true
-    logic-delete-value: 0
-    logic-not-delete-value: 1
-    id-type: 0
+    db-config:
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      id-type: auto
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
@@ -71,6 +70,13 @@ eureka:
       # defaultZone: http://local-eureka-server:7001/eureka/  # Eureka注册中心地址
       # defaultZone: http://msc-eureka-server-1:7001/eureka/,http://msc-eureka-server-2:7002/eureka/,http://msc-eureka-server-3:7003/eureka/
       defaultZone: http://local-eureka-server-1:7001/eureka/,http://local-eureka-server-2:7002/eureka/,http://local-eureka-server-3:7003/eureka/
+
+
+# Tm项目地址。 默认是127.0.0.1:8070,如果再服务器上的话要改成对应的地址。
+# 8070是Tm默认的监听端口，需要更改的话去看TM的配置文件信息，TM监听Socket端口. tx-lcn.manager.port=8070。默认是Tm的启动端口+100。虽然文档写的是-100.实际上是+100
+tx-lcn:
+  client:
+    manager-address: 127.0.0.1:8070
 
 info:
   app:

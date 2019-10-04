@@ -1,11 +1,12 @@
 package com.chennan.cloud.service;
 
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chennan.cloud.bo.Dept;
 import com.chennan.cloud.dao.DeptMapper;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -30,28 +31,29 @@ import java.util.List;
  */
 @Slf4j
 @Service
-public class DeptService {
+public class DeptService extends ServiceImpl<DeptMapper, Dept> {
 
-    @Autowired private DeptMapper deptMapper;
-
+    @LcnTransaction
     public int add(Dept dept) {
-        return deptMapper.insert(dept);
+        return baseMapper.insert(dept);
     }
 
     public Dept get(Long deptNo) {
-        return deptMapper.selectById(deptNo);
+        return baseMapper.selectById(deptNo);
     }
 
     public List<Dept> list() {
-        return deptMapper.selectList(null);
+        return baseMapper.selectList(null);
     }
 
+    @LcnTransaction
     public int edit(Dept dept) {
-        return deptMapper.updateById(dept);
+        return baseMapper.updateById(dept);
     }
 
+    @LcnTransaction
     public int delete(Long deptNo) {
-        return deptMapper.deleteById(deptNo);
+        return baseMapper.deleteById(deptNo);
     }
 
     /**
