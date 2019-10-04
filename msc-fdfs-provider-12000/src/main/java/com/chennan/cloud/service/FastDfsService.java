@@ -22,6 +22,12 @@ public class FastDfsService {
 
     @Autowired private FastDfsClient client;
 
+    /**
+     * 文件上传
+     * 最后返回fastDFS中的文件名称;group1/M00/01/04/CgMKrVvS0geAQ0pzAACAAJxmBeM793.doc
+     * @param file     文件字节
+     * @return fastDfs路径
+     */
     public String uploadFile(MultipartFile file){
         byte[] bytes = new byte[0];
         try {
@@ -38,8 +44,25 @@ public class FastDfsService {
         return client.uploadFile(bytes, fileSize, extension);
     }
 
+    /**
+     * 下载文件字节
+     * @param fileUrl 文件URL
+     * @return 文件字节
+     */
+    public byte[] downloadFileBytes(String fileUrl){
+        return client.downloadFile(fileUrl);
+    }
+
+    /**
+     * 下载文件
+     *  返回文件字节流大小
+     * @param fileUrl 文件URL
+     * @param fileName 下载后的文件名称
+     * @param request SpringMVC 内置request对象
+     * @return 文件ResponseEntity字节
+     */
     public ResponseEntity<byte[]> downloadFile(String fileUrl, String fileName, HttpServletRequest request) throws UnsupportedEncodingException {
-        byte[] bytes = client.downloadFile(fileUrl);
+        byte[] bytes = downloadFileBytes(fileUrl);
         HttpHeaders headers = new HttpHeaders();
         // 处理IE下载文件的中文名称乱码的问题
         String header = request.getHeader("User-Agent").toUpperCase();
