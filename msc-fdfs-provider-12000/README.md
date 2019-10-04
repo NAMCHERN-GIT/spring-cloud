@@ -1,6 +1,6 @@
 # spring-cloud 整合 FastDFS实现文件上传，下载
 ## 核心实现
-### 1.pom加入fastdfs-client依赖,参考文件[pom.xml](https://github.com/NAMCHERN-GIT/spring-cloud/blob/master/msc-fdfs-provider-12000/pom.xml)
+### 1.pom加入fastdfs-client依赖,参考文件[pom.xml](./pom.xml)
 ```xml
     <dependency>
         <groupId>com.github.tobato</groupId>
