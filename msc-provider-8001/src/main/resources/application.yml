@@ -6,11 +6,10 @@ mybatis-plus:
   mapper-locations: classpath:/mapper/**Mapper.xml
   type-aliases-package: com.chennan.cloud.bo
   global-config:
-    db-column-underline: true
-    refresh-mapper: true
-    logic-delete-value: 0
-    logic-not-delete-value: 1
-    id-type: 0
+    db-config:
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      id-type: auto
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false

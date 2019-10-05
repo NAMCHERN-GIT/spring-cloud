@@ -118,5 +118,6 @@ POST /actuator/bus-refresh
 ```
 
 ### TX-LCN 分布式事务解决
+[请阅读txlcn-tm](txlcn-tm/README.md)
 
 ### 认证与授权
