@@ -1,0 +1,24 @@
+server:
+  port: 5002
+spring:
+  application:
+    name: msc-user
+
+# 注册到注册中心Eureka
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${server.port}              # 实例别名
+    prefer-ip-address: true                                             # 访问路径可以显示ip地址
+  client:
+    service-url:
+      # defaultZone: http://msc-eureka-server:7001/eureka/
+      # defaultZone: http://local-eureka-server:7001/eureka/            # Eureka注册中心地址
+      # defaultZone: http://msc-eureka-server-1:7001/eureka/,http://msc-eureka-server-2:7002/eureka/,http://msc-eureka-server-3:7003/eureka/
+      defaultZone: http://local-eureka-server-1:7001/eureka/,http://local-eureka-server-2:7002/eureka/,http://local-eureka-server-3:7003/eureka/
+
+security:
+  oauth2:
+    resource:
+      id: msc-user
+      user-info-uri: http://localhost:11000/auth/api/userInfo
+      prefer-token-info: false

@@ -57,6 +57,10 @@
 
         <!-- txLcn-TM 端 -->
         <module>txlcn-tm</module>
+        <!-- 认证授权中心 -->
+        <module>oauth2-server</module>
+        <!-- 用户模块 -->
+        <module>msc-user</module>
     </modules>
 
     <properties>
@@ -96,10 +100,10 @@
         <txlcn.version>5.0.2.RELEASE</txlcn.version>
 
         <!-- spring-boot 版本号 -->
-        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <spring-boot.version>2.1.8.RELEASE</spring-boot.version>
 
         <!-- spring-cloud 版本号 -->
-        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
 
     <!-- 供继承者使用，按需引入依赖 -->

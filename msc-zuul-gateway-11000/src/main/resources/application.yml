@@ -1,10 +1,13 @@
+#--------------------端口-----------------------
 server:
   port: 11000
 
+#------------------微服务信息-----------------
 spring:
   application:
     name: msc-zuul-gateway
 
+#---------------------注册中心eureka--------------------------------------
 eureka:
   instance:
     instance-id: ${spring.application.name}-${server.port}
@@ -13,17 +16,38 @@ eureka:
     service-url:
       defaultZone: http://local-eureka-server-1:7001/eureka/,http://local-eureka-server-2:7002/eureka/,http://local-eureka-server-3:7003/eureka/
 
-# 服务网关代理
+# -----------------服务网关代理Zuul------------------------------------
 zuul:
   # 踩坑：prefix配置项前必须有'/',否则GG
   # 访问地址：http://127.0.0.1:11000/chennan/myProvider/dept/get?deptNo=1
-  prefix: /chennan
+  # prefix: /chennan
   ignored-services: "*"
   routes:
-    myProvider.serviceId: msc-provider
-    myProvider.path: /myProvider/**
+    myProvider:
+      serviceId: msc-provider
+      path: /myProvider/**
+    user:
+      path: /user/**
+      serviceId: msc-user
+      sensitiveHeaders: "*"
+    auth:
+      path: /auth/**
+      serviceId: oauth2-server
+      sensitiveHeaders: "*"
+  add-proxy-headers: true
 
+#---------------------OAuth2---------------------
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:${server.port}/auth/oauth/token
+      user-authorization-uri: http://localhost:${server.port}/auth/oauth/authorize
+      client-id: web
+    resource:
+      user-info-uri:  http://localhost:${server.port}/auth/api/userInfo
+      prefer-token-info: false
 
+#-------------------------监控信息--------------------
 info:
   app:
     name: ${eureka.instance.instance-id}
