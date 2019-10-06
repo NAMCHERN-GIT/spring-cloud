@@ -9,13 +9,18 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * 配置web安全认证
+ * @author chen.nan
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired @Qualifier("userDetailsService") private UserDetailsServiceImpl userDetailsService;
+    @Autowired @Qualifier("userDetailsService") private UserDetailsService userDetailsService;
 
     /**
      * 密码加密方式，这里没有做密码加密

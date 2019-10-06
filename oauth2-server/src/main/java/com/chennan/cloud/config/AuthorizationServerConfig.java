@@ -23,6 +23,7 @@ import javax.sql.DataSource;
 /**
  * 配置认证服务器
  * {@link @EnableAuthorizationServer}开启认证服务
+ * @author chen.nan
  */
 @Configuration
 @EnableAuthorizationServer

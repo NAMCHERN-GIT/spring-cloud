@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 用户角色权限查询业务类实现
+ * @author chen.nan
+ */
 @Service
 public class UserService extends ServiceImpl<UserMapper, User> {
 

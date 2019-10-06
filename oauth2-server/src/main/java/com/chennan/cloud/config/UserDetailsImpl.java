@@ -6,6 +6,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
+/**
+ * UserDetails 接口实现
+ * @author chen.nan
+ */
 @Data
 public class UserDetailsImpl implements UserDetails {
 

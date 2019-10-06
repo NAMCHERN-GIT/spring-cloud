@@ -2,6 +2,10 @@ package com.chennan.cloud.config;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * 密码不加密实现
+ * @author chen.nan
+ */
 public class NoEncryptPasswordEncoder implements PasswordEncoder {
 
     @Override

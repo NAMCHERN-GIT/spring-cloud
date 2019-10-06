@@ -8,6 +8,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 配置资源服务认证
+ */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {

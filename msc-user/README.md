@@ -1,3 +1,14 @@
+# 微服务用户模块
+开发步骤有以下关键几步接入认证中心
+### 1.pom添加依赖
+```xml
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-oauth2</artifactId>
+    </dependency>
+```
+### 2.application.yml 配置
+```yaml
 server:
   port: 5002
 spring:
@@ -23,3 +34,8 @@ security:
       id: msc-user                                                      # 资源编号
       user-info-uri: http://localhost:11000/auth/api/userInfo           # 与zuul中的配置相对应
       prefer-token-info: false
+
+```
+
+### 3.其余与普通的开发步骤一样
+此处省略。。。

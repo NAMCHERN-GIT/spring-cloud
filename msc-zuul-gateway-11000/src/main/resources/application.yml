@@ -23,28 +23,31 @@ zuul:
   # prefix: /chennan
   ignored-services: "*"
   routes:
+    # 普通微服务配置
     myProvider:
       serviceId: msc-provider
       path: /myProvider/**
+    # 普通微服务配置
     user:
       path: /user/**
       serviceId: msc-user
       sensitiveHeaders: "*"
+    # 认证中心路由规则配置
     auth:
       path: /auth/**
       serviceId: oauth2-server
       sensitiveHeaders: "*"
   add-proxy-headers: true
 
-#---------------------OAuth2---------------------
+#---------------------OAuth2------------------------
 security:
   oauth2:
     client:
-      access-token-uri: http://localhost:${server.port}/auth/oauth/token
-      user-authorization-uri: http://localhost:${server.port}/auth/oauth/authorize
+      access-token-uri: http://localhost:${server.port}/auth/oauth/token            # 获取token令牌的地址
+      user-authorization-uri: http://localhost:${server.port}/auth/oauth/authorize  # 授权模式访问之授权码模式,参考 https://blog.csdn.net/u013887008/article/details/80616422
       client-id: web
     resource:
-      user-info-uri:  http://localhost:${server.port}/auth/api/userInfo
+      user-info-uri:  http://localhost:${server.port}/auth/api/userInfo   # 许可认证中心地址，其它普通微服务要与本地址保持一致
       prefer-token-info: false
 
 #-------------------------监控信息--------------------

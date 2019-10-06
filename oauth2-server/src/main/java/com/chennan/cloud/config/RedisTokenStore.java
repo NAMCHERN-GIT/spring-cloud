@@ -14,6 +14,14 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 
 import java.util.*;
 
+/**
+ * 重新编写 RedisTokenStore 实现
+ * <p>
+ *     原因是spring-data-redis 2.0版本中set(String,String)被弃用了，要使用RedisConnection.stringCommands().set(…)，
+ *     所有我自定义一个RedisTokenStore，代码和RedisTokenStore一样，只是把所有conn.set(…)都换成conn..stringCommands().set(…)，测试后方法可行。
+ * </p>
+ * @author chen.nan
+ */
 public class RedisTokenStore implements TokenStore {
 
     private static final String ACCESS = "access:";
