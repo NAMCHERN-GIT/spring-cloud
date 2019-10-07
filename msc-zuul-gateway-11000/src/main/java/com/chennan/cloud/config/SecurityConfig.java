@@ -6,6 +6,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+/**
+ * CSRF 防止跨站攻击
+ * @author chen.nan
+ */
 @Configuration
 @EnableWebSecurity
 @Order(99)

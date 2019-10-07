@@ -982,6 +982,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 ### 3.3 普通模块接入微服务认证中心
 #### 3.3.1 zuul路由网关微服务配置
+##### 3.3.1.1 application.yml核心配置
 ```yaml
 # -----------------服务网关代理Zuul------------------------------------
 zuul:
@@ -1016,6 +1017,31 @@ security:
       prefer-token-info: false
 
 ```
+##### 3.3.1.2 添加SecurityConfig,CSRF防止跨站攻击
+```java
+package com.chennan.cloud.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+/**
+ * CSRF 防止跨站攻击
+ * @author chen.nan 
+ */
+@Configuration
+@EnableWebSecurity
+@Order(99)
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+    }
+}
+```
+
 #### 3.3.2 普通微服务配置
 参考 [msc-user](../msc-user/README.md)
 
