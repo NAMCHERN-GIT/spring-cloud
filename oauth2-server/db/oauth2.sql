@@ -46,7 +46,7 @@ create table oauth_approvals (
 	scope VARCHAR(256),
 	status VARCHAR(10),
 	expiresAt TIMESTAMP,
-	lastModifiedAt TIMESTAMP
+	lastModifiedAt TIMESTAMP NOT NULL DEFAULT '2019-10-07 13:26:00'
 );
 
 

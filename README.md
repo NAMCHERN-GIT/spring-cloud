@@ -121,3 +121,4 @@ POST /actuator/bus-refresh
 [请阅读txlcn-tm](txlcn-tm/README.md)
 
 ### 认证与授权
+[请阅读oauth2-server](oauth2-server/README.md)
