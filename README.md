@@ -3,6 +3,8 @@ spring-cloud学习
 
 学习初始阶段阶段
 
+[TOC]
+
 ## 环境配置
 ### mysql数据库配置
 ```text
@@ -17,7 +19,7 @@ spring-cloud学习
 ### githup配置中心地址
 [https://github.com/NAMCHERN-GIT/spring-cloud-config/blob/master/application.yml](https://github.com/NAMCHERN-GIT/spring-cloud-config/blob/master/application.yml)  
 [https://github.com/NAMCHERN-GIT/spring-cloud-config/blob/master/msc-config-client.yml](https://github.com/NAMCHERN-GIT/spring-cloud-config/blob/master/msc-config-client.yml)
-### 踩坑1
+### 踩坑1:使用feign传参问题
 ```java
 @FeignClient(name = "msc-provider")
 public interface DeptClientService {                                    
@@ -31,7 +33,7 @@ public interface DeptClientService {
 }
 ```
 
-### 踩坑2
+### 踩坑2：配置访问路由前缀坑
 zuul服务网关代理配置的坑
 ```yaml
 # 服务网关代理
@@ -45,7 +47,7 @@ zuul:
     myProvider.path: /myProvider/**
 ```
 
-### 踩坑3
+### 踩坑3：/actuator/refresh POST 接口问题
 注解 @RefreshScope 作用是刷新github上的配置，该注解必须放在@Controller 注解标注的类上，否则GG
 ```java
 package com.chennan.cloud.web;
