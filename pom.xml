@@ -86,7 +86,7 @@
 
         <!-- 数据库 -->
         <!-- mysql 数据库驱动包版本 -->
-        <mysql.version>8.0.17</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
 
         <!-- 连接池 -->
         <!-- 阿里druid连接池版本 -->
